@@ -1,11 +1,11 @@
 class Env {
   static String host = '10.0.2.2';
-  static String port = '5001';
+  static int port = 5001;
   String tokenPrefs = "idToken";
 
   //Get base url
   static String baseUrl(String url) {
-    return 'http://' + host + ':' + port + '/api/v1/' + url;
+    return 'https://' + host + ':' + port.toString() + '/api/v1/' + url;
   }
 
   //Get base header

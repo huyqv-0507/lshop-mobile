@@ -1,6 +1,11 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:laptop_mobile/models/repos/laptop_model/laptop.dart';
+import 'package:laptop_mobile/models/repos/order_info.dart';
 import 'package:laptop_mobile/repositories/laptop_repository.dart';
+import 'package:laptop_mobile/repositories/payment_repository.dart';
 
 class Test extends StatefulWidget {
   @override
@@ -8,23 +13,23 @@ class Test extends StatefulWidget {
 }
 
 class _TestState extends State<Test> {
-  final repos = LaptopRepository();
-  List laptops = <Laptop>[];
+  Completer<GoogleMapController> _controller = Completer();
+
+  static final CameraPosition _kGooglePlex = CameraPosition(
+    target: LatLng(10.7793169, 106.7570257),
+    zoom: 17,
+  );
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: FlatButton(
-            color: Colors.pink,
-            onPressed: () async {
-              await repos
-                  .fetchLaptops()
-                  .then((value) => {laptops = value})
-                  .catchError((onError) => print(onError));
-            },
-            child: Text('Click to test APIs')),
-      ),
-    );
+        body: GoogleMap(
+      zoomControlsEnabled: true,
+      mapType: MapType.normal,
+      initialCameraPosition: _kGooglePlex,
+      onMapCreated: (GoogleMapController controller) {
+        _controller.complete(controller);
+      },
+    ));
   }
 }

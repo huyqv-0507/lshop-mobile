@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:laptop_mobile/blocs/navbar_bloc/navbar_bloc.dart';
-import 'package:laptop_mobile/ui/navs/cart_nav.dart';
+import 'package:laptop_mobile/ui/navs/explore_nav.dart';
 import 'package:laptop_mobile/ui/navs/home_nav.dart';
 import 'package:laptop_mobile/ui/navs/notification_nav.dart';
 import 'package:laptop_mobile/ui/navs/profile_nav.dart';
@@ -16,7 +16,7 @@ class _NavigationUIState extends State<NavigationUI> {
   final List titleItems = <String>['Home', 'Explore', 'Notification', 'Me'];
   final List navbars = <Widget>[
     HomeNav(),
-    CartNav(),
+    ExploreNav(),
     NotificationNav(),
     ProfileNav()
   ];
@@ -40,16 +40,16 @@ class _NavigationUIState extends State<NavigationUI> {
                   items: [
                     BottomNavigationBarItem(
                         icon: Icon(MdiIcons.homeOutline),
-                        title: Text('${titleItems.elementAt(snapshot.data)}')),
+                        label: '${titleItems.elementAt(snapshot.data)}'),
                     BottomNavigationBarItem(
                         icon: Icon(Icons.laptop_outlined),
-                        title: Text('${titleItems.elementAt(snapshot.data)}')),
+                        label: '${titleItems.elementAt(snapshot.data)}'),
                     BottomNavigationBarItem(
                         icon: Icon(Icons.notifications_outlined),
-                        title: Text('${titleItems.elementAt(snapshot.data)}')),
+                        label: '${titleItems.elementAt(snapshot.data)}'),
                     BottomNavigationBarItem(
                         icon: Icon(Icons.account_circle_outlined),
-                        title: Text('${titleItems.elementAt(snapshot.data)}')),
+                        label: '${titleItems.elementAt(snapshot.data)}'),
                   ]));
         });
   }

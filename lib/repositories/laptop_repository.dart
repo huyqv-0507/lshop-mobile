@@ -8,6 +8,7 @@ class LaptopRepository {
   String laptops = 'laptops';
   Future<List<Laptop>> fetchLaptops() async {
     final res = await http.get(Env.baseUrl(laptops), headers: Env.baseHeader);
+
     if (res.statusCode == 200) {
       Iterable it = json.decode(res.body);
       List<Laptop> laptops = it.map((json) => Laptop.fromJson(json)).toList();

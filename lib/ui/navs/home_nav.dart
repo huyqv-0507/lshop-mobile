@@ -4,13 +4,14 @@ import 'package:laptop_mobile/blocs/laptop_bloc/laptop_detail_bloc.dart';
 import 'package:laptop_mobile/blocs/order_bloc/order_bloc.dart';
 import 'package:laptop_mobile/extensions/handlers/border_handler.dart';
 import 'package:laptop_mobile/extensions/handlers/color.dart';
-import 'package:laptop_mobile/extensions/handlers/float_button_handler.dart';
 import 'package:laptop_mobile/extensions/handlers/modify_string.dart';
 import 'package:laptop_mobile/extensions/handlers/padding_size.dart';
 import 'package:laptop_mobile/extensions/handlers/text_style_handler.dart';
 import 'package:laptop_mobile/models/repos/laptop_model/laptop.dart';
+import 'package:laptop_mobile/ui/pages/cart_page.dart';
 import 'package:laptop_mobile/ui/pages/laptop_detail_page.dart';
 import 'package:laptop_mobile/ui/pages/search_page.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class HomeNav extends StatefulWidget {
   @override
@@ -48,7 +49,15 @@ class _HomeNavState extends State<HomeNav> {
       body: _homeBody(),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       floatingActionButton: Stack(children: [
-        FloatButtonHandler.floatPrimaryButton,
+        FloatingActionButton(
+          backgroundColor: kFloatButtonCart,
+          onPressed: () => Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => CardPage())),
+          child: Icon(
+            MdiIcons.cartOutline,
+            color: kFloatButtonIconCart,
+          ),
+        ),
         Positioned(
           top: 10,
           right: 10,
@@ -157,7 +166,6 @@ class _HomeNavState extends State<HomeNav> {
                     }),
               );
             }
-            if (snapshot.hasError) {}
             return CircularProgressIndicator();
           },
         )
@@ -273,7 +281,6 @@ class _HomeNavState extends State<HomeNav> {
                     }),
               );
             }
-            if (snapshot.hasError) {}
             return CircularProgressIndicator();
           },
         )

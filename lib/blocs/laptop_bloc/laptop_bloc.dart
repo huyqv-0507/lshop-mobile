@@ -5,12 +5,14 @@ import 'package:laptop_mobile/repositories/laptop_repository.dart';
 import 'package:rxdart/subjects.dart';
 
 class LaptopBloc {
+  //Controll All Laptop data
   var fetchLaptopsController = PublishSubject<List<Laptop>>();
   Sink<List<Laptop>> get fetchLaptopsSink => fetchLaptopsController.sink;
   Stream<List<Laptop>> get fetchLaptopsStream => fetchLaptopsController.stream;
 
   final laptopRepos = LaptopRepository();
 
+  //Get all laptops from database
   fetchAllLaptops() async {
     await laptopRepos
         .fetchLaptops()
