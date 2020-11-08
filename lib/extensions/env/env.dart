@@ -1,11 +1,11 @@
 class Env {
-  static String host = '10.0.2.2';
+  static String host = 'lshop.azurewebsites.net';
   static int port = 5001;
   String tokenPrefs = "idToken";
 
   //Get base url
   static String baseUrl(String url) {
-    return 'https://' + host + ':' + port.toString() + '/api/v1/' + url;
+    return 'https://' + host + '/api/v1/' + url;
   }
 
   //Get base header

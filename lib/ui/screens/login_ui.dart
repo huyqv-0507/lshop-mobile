@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:laptop_mobile/blocs/user_bloc/authentication_bloc/authentication_bloc.dart';
+import 'package:laptop_mobile/blocs/user_bloc/firebase_bloc/firebase_bloc.dart';
 import 'package:laptop_mobile/extensions/handlers/color.dart';
 import 'package:laptop_mobile/extensions/handlers/padding_size.dart';
 import 'package:laptop_mobile/extensions/handlers/text_style_handler.dart';
@@ -17,6 +18,17 @@ class LoginUI extends StatefulWidget {
 class _LoginUIState extends State<LoginUI> {
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+
+  signInWithGoogle() {
+    firebaseBloc
+        .signInWithGoogle()
+        .then((value) => {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => NavigationUI()))
+            })
+        .catchError((onError) =>
+            {print('LoginScreen - signInWithGoogle ------------- $onError')});
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -251,7 +263,7 @@ class _LoginUIState extends State<LoginUI> {
   Widget _loginWithGoogleButton() {
     return FlatButton(
       height: 60,
-      onPressed: null,
+      onPressed: () => signInWithGoogle(),
       child: Container(
           width: 150,
           height: 45,

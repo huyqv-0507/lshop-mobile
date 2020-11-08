@@ -14,6 +14,7 @@ class Laptop {
   String storage;
   String ram;
   dynamic weight;
+  String imageUrl;
   dynamic brandId;
 
   Laptop(
@@ -27,6 +28,7 @@ class Laptop {
       this.storage,
       this.ram,
       this.weight,
+      this.imageUrl,
       this.brandId);
 
   factory Laptop.fromJson(Map<String, dynamic> json) => _$LaptopFromJson(json);

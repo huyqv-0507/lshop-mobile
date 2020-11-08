@@ -117,8 +117,8 @@ class _LaptopDetailState extends State<LaptopDetail> {
                           Container(
                             width: double.infinity,
                             height: 250,
-                            child: Image.asset(
-                              'assets/images/laptop.jpeg',
+                            child: Image.network(
+                              '${snapshot.data.imageUrl}',
                               fit: BoxFit.cover,
                             ),
                           ),

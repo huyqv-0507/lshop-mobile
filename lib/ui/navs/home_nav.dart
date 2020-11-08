@@ -209,9 +209,9 @@ class _HomeNavState extends State<HomeNav> {
                       borderRadius: BorderHandler.brDefaultImageBorder),
                   child: ClipRRect(
                     borderRadius: BorderHandler.brDefaultImageBorder,
-                    child: Image.asset(
-                      'assets/images/laptop.jpeg',
-                      fit: BoxFit.fill,
+                    child: Image.network(
+                      '${laptop.imageUrl}',
+                      fit: BoxFit.fitWidth,
                     ),
                   ),
                 ),
@@ -314,9 +314,9 @@ class _HomeNavState extends State<HomeNav> {
                     borderRadius: BorderHandler.brDefaultImageBorder),
                 child: ClipRRect(
                   borderRadius: BorderHandler.brDefaultImageBorder,
-                  child: Image.asset(
-                    'assets/images/laptop.jpeg',
-                    fit: BoxFit.fill,
+                  child: Image.network(
+                    '${laptop.imageUrl}',
+                    fit: BoxFit.fitWidth,
                   ),
                 ),
               ),

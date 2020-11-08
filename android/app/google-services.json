@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "39652888660",
+    "firebase_url": "https://laptopec-db3cb.firebaseio.com",
+    "project_id": "laptopec-db3cb",
+    "storage_bucket": "laptopec-db3cb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:39652888660:android:e2a68048f70f0370e0ddc1",
+        "android_client_info": {
+          "package_name": "com.example.laptop_mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "39652888660-sa1n1v9bjk87s6fu1cgr9apd7p31lcft.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.laptop_mobile",
+            "certificate_hash": "64e85968099078e51ebbc76b0f0e8c79a297eaa8"
+          }
+        },
+        {
+          "client_id": "39652888660-rli2pvu11de3bvgjvfvj8m17e1tldi1h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCP94J7GZJfc4hdYPAaoCalD2haUD8vDYI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "39652888660-rli2pvu11de3bvgjvfvj8m17e1tldi1h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

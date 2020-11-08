@@ -18,6 +18,7 @@ Laptop _$LaptopFromJson(Map<String, dynamic> json) {
     json['storage'] as String,
     json['ram'] as String,
     json['weight'],
+    json['imageUrl'] as String,
     json['brandId'],
   );
 }
@@ -33,5 +34,6 @@ Map<String, dynamic> _$LaptopToJson(Laptop instance) => <String, dynamic>{
       'storage': instance.storage,
       'ram': instance.ram,
       'weight': instance.weight,
+      'imageUrl': instance.imageUrl,
       'brandId': instance.brandId,
     };

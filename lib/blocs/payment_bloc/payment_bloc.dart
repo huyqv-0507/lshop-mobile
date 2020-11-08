@@ -1,14 +1,17 @@
 import 'dart:async';
+import 'dart:math';
 
 import 'package:laptop_mobile/models/repos/order_info.dart';
 import 'package:laptop_mobile/repositories/payment_repository.dart';
 
 class PaymentBloc {
   OrderInfo _orderInfo;
-
+  final _random = new Random();
+  int _orderId = 0000;
   PaymentBloc() {
     paymentStream.listen((totalPrice) => {
-          _orderInfo = OrderInfo(05, totalPrice, 00, 'OK', '00'),
+          _orderId = _random.nextInt(1000),
+          _orderInfo = OrderInfo(_orderId, totalPrice, 00, 'OK', '00'),
           pay(_orderInfo)
         });
   }
